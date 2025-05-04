@@ -5,44 +5,230 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kind Paws - Home</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f8fb;
+      color: #2e4057;
+    }
+
+    .site-header {
+      background: #a0c4ff;
+      color: #2e4057;
+      padding: 1em 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5em;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .nav-bar a {
+      color: #2e4057;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .nav-bar a:hover {
+      color: #5d80a1;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1583337130417-3346a1b68cfa?auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+      color: white;
+      padding: 6em 2em;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(160, 196, 255, 0.5);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content h2 {
+      font-size: 3em;
+      margin-bottom: 0.5em;
+    }
+
+    .hero-buttons .btn {
+      padding: 0.75em 1.5em;
+      margin: 1em 0.5em;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .primary {
+      background-color: #a0c4ff;
+      color: #2e4057;
+    }
+
+    .primary:hover {
+      background-color: #87b2f7;
+    }
+
+    .secondary {
+      background-color: white;
+      color: #5d80a1;
+      border: 2px solid #a0c4ff;
+    }
+
+    .secondary:hover {
+      background-color: #e3f2ff;
+    }
+
+    .featured-pets {
+      padding: 4em 2em;
+      background: #e3f2ff;
+      text-align: center;
+    }
+
+    .featured-pets h2 {
+      font-size: 2em;
+      color: #3c4c66;
+    }
+
+    .pet-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2em;
+      margin-top: 2em;
+    }
+
+    .pet-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      width: 260px;
+      transition: transform 0.2s;
+    }
+
+    .pet-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .pet-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .pet-card h3 {
+      margin: 0.5em 0 0;
+      color: #2e4057;
+    }
+
+    .pet-card p {
+      padding: 0 1em 1em;
+      font-size: 0.95em;
+      color: #555;
+    }
+
+    .footer {
+      background: #a0c4ff;
+      color: #2e4057;
+      text-align: center;
+      padding: 1.5em 0;
+      font-size: 0.9em;
+    }
+
+    .footer a {
+      color: #2e4057;
+      text-decoration: underline;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      console.log("Welcome to Kind Paws!");
+    });
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Kind Paws</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="adopt.html">Adopt</a>
-      <a href="donate.html">Donate</a>
-      <a href="volunteer.html">Volunteer</a>
-    </nav>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">🐾 Kind Paws</h1>
+      <nav class="nav-bar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="adopt.html">Adopt</a>
+        <a href="donate.html">Donate</a>
+        <a href="volunteer.html">Volunteer</a>
+      </nav>
+    </div>
   </header>
 
   <main>
     <section class="hero">
-      <h2>Welcome to Kind Paws!</h2>
-      <p>Your new best friend is waiting for you.</p>
-      <a href="adopt.html"><button>Adopt Now</button></a>
-      <a href="donate.html"><button>Donate</button></a>
+      <div class="hero-content">
+        <h2>Find Your Forever Friend</h2>
+        <p>Kind Paws connects loving dogs with caring humans. Make a difference today.</p>
+        <div class="hero-buttons">
+          <a href="adopt.html" class="btn primary">Adopt Now</a>
+          <a href="donate.html" class="btn secondary">Donate</a>
+        </div>
+      </div>
     </section>
 
     <section class="section featured-pets">
-      <div class="pet-card">
-        <img src="dog1.jpg" alt="Dog 1" />
-        <h3>Bella</h3>
-        <p>2 y/o Labrador, friendly and playful.</p>
-      </div>
-      <div class="pet-card">
-        <img src="dog2.jpg" alt="Dog 2" />
-        <h3>Max</h3>
-        <p>3 y/o Beagle, loves kids and cuddles.</p>
+      <h2>Featured Dogs</h2>
+      <div class="pet-grid">
+        <div class="pet-card">
+          <img src="https://placedog.net/400/280?id=1" alt="Dog 1" />
+          <h3>Bella</h3>
+          <p>2 y/o Labrador. Friendly and playful.</p>
+        </div>
+        <div class="pet-card">
+          <img src="https://placedog.net/400/280?id=2" alt="Dog 2" />
+          <h3>Max</h3>
+          <p>3 y/o Beagle. Loves kids and cuddles.</p>
+        </div>
+        <div class="pet-card">
+          <img src="https://placedog.net/400/280?id=3" alt="Dog 3" />
+          <h3>Luna</h3>
+          <p>1 y/o Terrier. Energetic and sweet.</p>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <p>Contact us at kindpaws@shelter.org | Follow us @KindPaws on social media</p>
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Kind Paws. Contact us at <a href="mailto:kindpaws@shelter.org">kindpaws@shelter.org</a></p>
+      <div class="social-links">
+        <a href="#">Instagram</a> | <a href="#">Facebook</a> | <a href="#">Twitter</a>
+      </div>
+    </div>
   </footer>
 </body>
 </html>
